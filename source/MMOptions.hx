@@ -88,6 +88,9 @@ class MMOptions extends MusicBeatSubstate
 		verText.alpha = 0; verText.y += 20;
 		FlxTween.tween(verText, {y: verText.y - 20, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: .5});
 
+		#if android
+		addVirtualPad(LEFT_FULL, A_B_C);
+		#end
 		super.create();
 	}
 
@@ -841,7 +844,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		'Hide Song Length',
 		'Flashing Lights',
 		'Camera Zooms'
-		#if !mobile, 'FPS Counter' #end
+		#if !android, 'FPS Counter' #end
 	];
 
 	private var grpOptions:FlxTypedGroup<Alphabet>;
@@ -1409,6 +1412,15 @@ class MarioSubstate extends MusicBeatSubstate
 		}
 		changeSelection();
 		reloadValues();
+
+		#if android
+		if (virtualPad.buttonC.justPressed) {
+			#if android
+			removeVirtualPad();
+			#end
+			openSubState(new android.AndroidControlsSubState());
+		}
+		#end
 	}
 
 	var nextAccept:Int = 5;
