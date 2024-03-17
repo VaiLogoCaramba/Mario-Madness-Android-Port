@@ -302,6 +302,9 @@ class CreditsState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.music('creditsmenu'), 1);
 		}
 
+		#if android
+		addVirtualPad(UP_DOWN, B);
+		#end
 		super.create();
 	}
 
