@@ -11,13 +11,6 @@ import openfl.utils.Assets;
 
 using StringTools;
 
-#if sys
-import sys.FileSystem;
-import sys.io.File;
-#else
-import openfl.utils.Assets;
-#end
-
 class CoolUtil {
 	inline public static function scale(x:Float, l1:Float, h1:Float, l2:Float, h2:Float):Float
 		return ((x - l1) * (h2 - l2) / (h1 - l1) + l2);
