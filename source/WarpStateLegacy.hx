@@ -94,6 +94,10 @@ class WarpState extends MusicBeatState
 		add(pibemapa);
 
 		changeSelection();
+
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 		super.create();
 	}
 
