@@ -372,6 +372,11 @@ class GameOverSubstate extends MusicBeatSubstate
 			bf.visible = false;
 			FlxG.camera.zoom = 0.8;
 
+			#if android
+			addVirtualPad(NONE, A_B);
+			addPadCamera();
+			#end
+
 			songFadeOut = true;
 
 			var pibeGL:FlxSprite = new FlxSprite().loadGraphic(Paths.image('modstuff/gameovers/golden_land_gameover'));
