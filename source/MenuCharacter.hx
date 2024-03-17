@@ -5,7 +5,7 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import haxe.Json;
 import haxe.format.JsonParser;
 import openfl.utils.Assets;
-#if MODS_ALLOWED
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end
