@@ -618,6 +618,10 @@ class MainMenuState extends MusicBeatState {
 				ClientPrefs.saveSettings();
 			}
 			#end
+
+			#if android
+			addVirtualPad(LEFT_FULL, A_B);
+			#end
 		}
 
 		Mouse.cursor = WEHOVERING ? BUTTON : ARROW;
