@@ -63,6 +63,10 @@ class CustomFreeplayState extends MusicBeatSubstate
 		}
 		#end
 
+		#if android
+		addVirtualPad(LEFT_RIGHT, A_B);
+		#end
+
 		grpOptions = new FlxTypedGroup<FlxSprite>();
 		add(grpOptions);
 
